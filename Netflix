@@ -1,0 +1,86 @@
+-- Content Distribution Across countries
+SELECT country, COUNT(*) AS content_count
+FROM netflix
+WHERE country IS NOT NULL
+GROUP BY country
+ORDER BY content_count DESC
+LIMIT 5;
+
+
+-- Most Popular Genre on Netflix
+
+SELECT listed_in, COUNT(*) AS genre_count
+FROM netflix
+WHERE listed_in IS NOT NULL
+GROUP BY listed_in
+ORDER BY genre_count DESC
+LIMIT 5;
+
+-- Content Addition Over the Years
+
+SELECT EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year_added, 
+       COUNT(*) AS total_added
+FROM netflix
+WHERE date_added IS NOT NULL
+GROUP BY year_added
+ORDER BY year_added DESC;
+
+
+--  Movies vs TV Shows Comparison
+
+SELECT type, COUNT(*) AS count
+FROM netflix
+GROUP BY type;
+
+-- Top Directors with Most Content 
+
+SELECT director, COUNT(*) AS total_content
+FROM netflix
+WHERE director IS NOT NULL
+GROUP BY director
+ORDER BY total_content DESC
+LIMIT 5;
+
+-- TOP 10 Content Availability by country & Genre
+
+SELECT country, listed_in, COUNT(*) AS total_content
+FROM netflix
+WHERE country IS NOT NULL AND listed_in IS NOT NULL
+GROUP BY country, listed_in
+ORDER BY total_content DESC
+LIMIT 10;
+
+-- Most Recent Added Content 
+
+SELECT title, type, date_added
+FROM netflix
+WHERE date_added IS NOT NULL
+ORDER BY date_added DESC
+LIMIT 10;
+
+-- TOP Content Duration Performance
+
+SELECT title, type, duration
+FROM netflix
+WHERE duration IS NOT NULL
+ORDER BY CAST(SPLIT_PART(duration, ' ', 1) AS INTEGER) DESC
+LIMIT 10;
+
+-- Country with the Highest Number of TV Shows
+
+SELECT country, COUNT(*) AS tv_show_count
+FROM netflix
+WHERE type = 'TV Show' AND country IS NOT NULL
+GROUP BY country
+ORDER BY tv_show_count DESC
+LIMIT 5;
+
+-- Monthly Trend of Content Additions
+
+SELECT TO_CHAR(TO_DATE(date_added, 'Month DD, YYYY'), 'YYYY-MM') AS month_added, 
+       COUNT(*) AS total_added
+FROM netflix
+WHERE date_added IS NOT NULL
+GROUP BY month_added
+ORDER BY month_added DESC
+LIMIT 10;
