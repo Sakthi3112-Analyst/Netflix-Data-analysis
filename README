@@ -1,0 +1,37 @@
+# 🎬 Netflix Content Analysis
+
+**Tools:** Python (Pandas, Matplotlib) · SQL  |  **Dataset:** Netflix Movies & TV Shows (Kaggle, 8,800+ titles)
+
+---
+
+## 🎯 Objective
+Analyse Netflix's global content library to uncover trends in content type, genre popularity, country-wise production, and release patterns — helping understand how Netflix builds its catalog strategy.
+
+## 🛠️ Tools Used
+- **Python** – Pandas (data cleaning, transformation), Matplotlib/Seaborn (visualisation)
+- **SQL** – Exploratory queries, filtering, aggregation
+- **Dataset** – Netflix Movies and TV Shows (Kaggle)
+
+## 🔍 Analysis Performed
+- **Content Type Split** — Movies vs TV Shows ratio over the years
+- **Top Genres** — Most frequent genres globally and by region
+- **Country-wise Output** — Top content-producing countries (USA, India, UK)
+- **Release Year Trends** — Content addition spikes (2018–2020 peak)
+- **Rating Distribution** — TV-MA vs TV-14 vs PG content breakdown
+- **Duration Patterns** — Average movie length and TV show season count
+
+## 💡 Key Findings
+- Netflix added the most content between **2018–2020**, slowing post-pandemic
+- **Movies** make up ~70% of the catalog; **TV Shows** growing faster in recent years
+- **Drama** and **International Movies** are consistently the top two genres
+- **United States** leads content production, followed by **India** and the **United Kingdom**
+
+## 📂 Files
+```
+Netflix-Data-analysis/
+├── Netflix/           # Dataset and analysis files
+└── README.md
+```
+
+---
+*Part of my Data Analyst portfolio | [View all projects](https://github.com/Sakthi3112-Analyst)*
